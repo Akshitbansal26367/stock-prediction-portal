@@ -47,13 +47,14 @@ const Register = () => {
 
               <div className=" mb-3">
                 <input type="email" className="form-control" placeholder="Email Address" value={email} onChange={(e) => setEmail(e.target.value)} />
+                <small>{errors.email && <div className="text-danger">{errors.email}</div>}</small>
               </div>
 
               <div className="mb-3">
                 <input type="password" className="form-control" placeholder="Set Password" value={password} onChange={(e => setPassword(e.target.value))} />
                 <small>{errors.password && <div className="text-danger">{errors.password}</div>}</small>
               </div>
-              {success && <div className="alert alert-success">Registration Successful</div>}
+              {success && <div className="alert alert-success mb-3">Registration Successful</div>}
               {loading ? (
                 <button type="submit" className="btn btn-info d-block mx-auto" disabled><FontAwesomeIcon icon={faSpinner} spin />  Please Wait...</button>
               ) : (
