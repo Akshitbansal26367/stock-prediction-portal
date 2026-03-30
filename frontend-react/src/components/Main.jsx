@@ -1,6 +1,4 @@
 import Button from "./Button";
-import Footer from "./Footer";
-import Header from "./Header";
 
 const Main = () => {
   return (
