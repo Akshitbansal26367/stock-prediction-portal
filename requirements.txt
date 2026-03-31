@@ -1,0 +1,14 @@
+Django==5.2.12
+djangorestframework==3.16.1
+django-cors-headers==4.9.0
+python-decouple==3.8
+
+tensorflow==2.10.0
+keras==2.10.0
+
+numpy==1.26.4
+pandas==2.1.4
+matplotlib==3.8.2
+scikit-learn==1.7.2
+
+yfinance==1.2.0
