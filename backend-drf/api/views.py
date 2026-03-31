@@ -7,8 +7,6 @@ import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 from datetime import datetime
-# from pathlib import Path
-from django.conf import settings
 from .utils import save_plot
 from sklearn.preprocessing import MinMaxScaler
 from keras.models import load_model
@@ -71,14 +69,6 @@ class StockPredictionAPIView(APIView):
             data_testing = pd.DataFrame(df.Close[int(len(df) * 0.7) : int(len(df))])
             
             scaler = MinMaxScaler(feature_range=(0, 1))
-
-            # model_path = Path(settings.BASE_DIR) / 'stock_prediction_model.keras'
-            # if not model_path.exists():
-            #     return Response(
-            #         {'error': f"Model file not found at {model_path}. Please place stock_prediction_model.keras in {settings.BASE_DIR}."},
-            #         status=status.HTTP_500_INTERNAL_SERVER_ERROR,
-            #     )
-
             model = load_model("stock_prediction_model.keras")
             
             past_100_days = data_training.tail(100)

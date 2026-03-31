@@ -8,12 +8,9 @@ class UserSerializer(serializers.ModelSerializer):
         fields = ['username', 'email', 'password']
     
     def create(self, validated_data):
-        # User.objects.create = save the password in a plain text
-        # user.objects.create_user = automatically hash the password
         user = User.objects.create_user(
             validated_data['username'],
             validated_data['email'],
             validated_data['password']
         )
-        # user = User.objects.create_user(**validated_data)
         return user
